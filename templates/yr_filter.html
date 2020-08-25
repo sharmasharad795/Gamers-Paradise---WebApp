@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>VidGames</title>
+<style>
+table 
+  {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+ }
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #E0FFFF;}
+tr:nth-child(odd){background-color: #4682B4;color:white}
+
+html, body { height: 100%; overflow: hidden}
+tr:hover {background-color: #4682B4;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2F4F4F;
+  color: white;
+  position: sticky ;
+  top: 0;
+}
+
+
+
+div.tableContainer {
+
+  clear: both;
+  border: 1px solid #963;
+  height: 510px;
+  overflow: auto;
+  
+  margin-top: 310px;
+  margin-bottom: 50px;
+  margin-right: 3px;
+  margin-left: 3px
+  }
+  
+.button {
+  background-color: #4682B4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px
+}
+
+body{
+background:
+    radial-gradient(black 3px, transparent 4px),
+    radial-gradient(black 3px, transparent 4px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #a4a4a4 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #a4a4a4 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+    #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.buttongrp{margin-top: 182px;
+margin-left:-530px;
+padding:0px;
+float:left}
+
+.filtergrp{margin-top: 180px;
+margin-left:-300px;
+margin-right:400px;
+padding:0px;
+
+
+float:left
+}
+
+.sharad{
+margin-top: 120px;
+margin-left:-20px;
+padding:0px;
+
+float:left
+
+}
+
+input[type=submit] {
+  background-color: #4682B4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px
+}
+
+select{
+  
+  width:89px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 5px}
+
+.text{
+width: 300px;
+
+}
+h1{
+margin-top:1px;
+margin-left:1px;
+font-size:90px;
+font-style: italic;
+font-weight: bold;
+text-align: center;
+padding:0px;
+overflow-x: hidden;
+
+
+color:#191970;
+float:left
+}
+
+#content {
+    position: relative;
+    margin-top:5px;
+    margin-right:5px;
+    
+}
+#content img {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+   }
+
+
+</style>
+</head>
+<body >
+<h1>Jeuge Paraiso</h1>
+
+<div class="buttongrp">
+<select name="Dropdown1" onchange="javascript:location.href = this.value;">
+  <option value="none" selected disabled hidden> 
+          Name
+      </option>
+  <option value="http://127.0.0.1:5000/name_asc">ASC</option>
+  <option value="http://127.0.0.1:5000/name_des">DESC</option>
+<select>
+
+<select name="Dropdown1" onchange="javascript:location.href = this.value;">
+  <option value="none" selected disabled hidden> 
+          Publisher
+      </option>
+  <option value="http://127.0.0.1:5000/publisher_asc">ASC</option>
+  <option value="http://127.0.0.1:5000/publisher_des">DESC</option>
+<select>
+
+<select name="Dropdown1" onchange="javascript:location.href = this.value;">
+  <option value="none" selected disabled hidden> 
+          NA Sales
+      </option>
+  <option value="http://127.0.0.1:5000/NA_Sales_asc">ASC</option>
+  <option value="http://127.0.0.1:5000/NA_Sales_des">DESC</option>
+<select>
+
+<select name="Dropdown1" onchange="javascript:location.href = this.value;">
+  <option value="none" selected disabled hidden> 
+          EU Sales
+      </option>
+  <option value="http://127.0.0.1:5000/EU_Sales_asc">ASC</option>
+  <option value="http://127.0.0.1:5000/EU_Sales_des">DESC</option>
+<select>
+<button class="button" onclick="window.location.href = 'http://127.0.0.1:5000/'"> Reset</button>
+
+</div>
+
+<div class="sharad">
+<form method="POST" action="gn_filter">
+    <input name="text" placeholder="What's your genre?">
+    <input type="submit" value='Genre Filter'>
+</form>
+</div>
+
+<div class ="filtergrp">
+<form method="POST" action="yr_filter">
+ <select name="Dropdown1">
+  <option value="1980">1980</option>
+  <option value="1981">1981</option>
+  <option value="1982">1982</option>
+  <option value="1983">1983</option>
+  <option value="1984">1984</option>
+  <option value="1985">1985</option>
+  <option value="1986">1986</option>
+  <option value="1987">1987</option>
+  <option value="1988">1988</option>
+  <option value="1989">1989</option>
+  <option value="1990">1990</option>
+  <option value="1991">1991</option>
+  <option value="1992">1992</option>
+  <option value="1993">1993</option>
+  <option value="1994">1994</option>
+  <option value="1995">1995</option>
+  <option value="1996">1996</option>
+  <option value="1997">1997</option>
+  <option value="1998">1998</option>
+  <option value="1999">1999</option>
+  <option value="2000">2000</option>
+  <option value="2001">2001</option>
+  <option value="2002">2002</option>
+  <option value="2003">2003</option>
+  <option value="2004">2004</option>
+  <option value="2005">2005</option>
+  <option value="2006">2006</option>
+  <option value="2007">2007</option>
+  <option value="2008">2008</option>
+  <option value="2009">2009</option>
+  <option value="2010">2010</option>
+  <option value="2011">2011</option>
+  <option value="2012">2012</option>
+  <option value="2013">2013</option>
+  <option value="2014">2014</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+  <option value="2017">2017</option>
+  <option value="2020">2020</option>
+  
+</select>
+
+<select name="Dropdown2">
+  <option value="1980">1980</option>
+  <option value="1981">1981</option>
+  <option value="1982">1982</option>
+  <option value="1983">1983</option>
+  <option value="1984">1984</option>
+  <option value="1985">1985</option>
+  <option value="1986">1986</option>
+  <option value="1987">1987</option>
+  <option value="1988">1988</option>
+  <option value="1989">1989</option>
+  <option value="1990">1990</option>
+  <option value="1991">1991</option>
+  <option value="1992">1992</option>
+  <option value="1993">1993</option>
+  <option value="1994">1994</option>
+  <option value="1995">1995</option>
+  <option value="1996">1996</option>
+  <option value="1997">1997</option>
+  <option value="1998">1998</option>
+  <option value="1999">1999</option>
+  <option value="2000">2000</option>
+  <option value="2001">2001</option>
+  <option value="2002">2002</option>
+  <option value="2003">2003</option>
+  <option value="2004">2004</option>
+  <option value="2005">2005</option>
+  <option value="2006">2006</option>
+  <option value="2007">2007</option>
+  <option value="2008">2008</option>
+  <option value="2009">2009</option>
+  <option value="2010">2010</option>
+  <option value="2011">2011</option>
+  <option value="2012">2012</option>
+  <option value="2013">2013</option>
+  <option value="2014">2014</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+  <option value="2017">2017</option>
+  <option value="2020">2020</option>
+  
+</select>
+
+<input type="submit" value="Year Filter"  />
+</form>
+</div>
+
+<div id="content">
+<img src="{{url_for('static', filename='filter_yr.png')}}" width="600" height="300" />
+</div>
+
+
+
+<div id="tableContainer" class="tableContainer">
+{% for table in tables %}
+            {{ table|safe }}
+{% endfor %}
+</div> 
+
+</body>
+</html>
+
+
